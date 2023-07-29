@@ -47,7 +47,7 @@ image = np.transpose(image, (2, 0, 1)).astype(np.float32)
 image = torch.tensor(image, dtype=torch.float).cuda()
 image = image.unsqueeze(0)
 print(image.shape)
- 
+  
 start = time.time()
 outputs = model(image) 
 _, preds = torch.max(outputs.data, 1)

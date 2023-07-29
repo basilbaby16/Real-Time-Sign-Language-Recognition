@@ -42,4 +42,4 @@ for idx, dir_path  in tqdm(enumerate(dir_paths), total=len(dir_paths)):
 
         cv2.imwrite(f"input/preprocessed_image/{dir_path}/{dir_path}{i}.jpg", image)
 
-print('DONE')
+print('DONE') 
