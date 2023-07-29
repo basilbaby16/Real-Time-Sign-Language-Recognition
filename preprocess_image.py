@@ -24,7 +24,7 @@ args = vars(parser.parse_args())
 print(f"Preprocessing {args['num_images']} from each category...")
 
 # get all the image paths
-#image_paths = list(paths.list_images('input/asl_alphabet_train'))                    #change
+#image_paths = list(paths.list_images('input/asl_alphabet_train'))                    
 dir_paths = os.listdir('input/asl_alphabet_train')
 dir_paths.sort()
 

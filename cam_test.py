@@ -21,7 +21,7 @@ from torchvision import models
 
 # load label binarizer
 lb = joblib.load('outputs/lb.pkl')
-#device=('cuda:0' if torch.cuda.is_available() else 'cpu')          #change comment
+#device=('cuda:0' if torch.cuda.is_available() else 'cpu')          
 model = cnn_models.CustomCNN()            #change .to(device)
 model.load_state_dict(torch.load('outputs/model.pth'))
 print(model)
@@ -44,14 +44,14 @@ frame_height = int(cap.get(4))
 # define codec and create VideoWriter object
 out = cv2.VideoWriter('outputs/asl.mp4', cv2.VideoWriter_fourcc(*'mp4v'), 30, (frame_width,frame_height))
 
-frame_rate = 0.7        #change not there
-prev=0                  #change not there
-finalText=""            #change not there
+frame_rate = 0.7        
+prev=0                  
+finalText=""            
 
 # read until end of video
 while(cap.isOpened()):
     # capture each frame of the video
-    time_elapsed=time.time() - prev     #change not there      #no comment
+    time_elapsed=time.time() - prev     
     ret, frame = cap.read()
     # get the hand area on the video capture screen
     cv2.rectangle(frame, (100, 100), (324, 324), (20,34,255), 2)
@@ -60,7 +60,7 @@ while(cap.isOpened()):
     image = hand
     
     image = np.transpose(image, (2, 0, 1)).astype(np.float32)
-    image = torch.tensor(image, dtype=torch.float)               #change.to(device)
+    image = torch.tensor(image, dtype=torch.float)               
     image = image.unsqueeze(0)
     
     outputs = model(image)
@@ -68,7 +68,7 @@ while(cap.isOpened()):
     #print('PREDS', preds)
     #print(f"Predicted output: {lb.classes_[preds]}")
 
-    #change not there from
+    
     cv2.putText(frame, lb.classes_[preds], (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 0, 255), 2)
 
     if time_elapsed > 1./frame_rate:
@@ -83,7 +83,7 @@ while(cap.isOpened()):
            else:
               finalText+=mytext
            print(finalText)
-    #change till there not there
+    
 
     
     cv2.putText(frame, finalText, (120, 80), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 0, 255), 2)
@@ -93,10 +93,10 @@ while(cap.isOpened()):
     time.sleep(0.09)
 
     # press `q` to exit
-    if cv2.waitKey(27) & 0xFF == ord('q'):             #change no comment
-        engine = pyttsx3.init()     #change not there
-        engine.say(finalText)       #change not there
-        engine.runAndWait()         #change not there
+    if cv2.waitKey(27) & 0xFF == ord('q'):             
+        engine = pyttsx3.init()     
+        engine.say(finalText)       
+        engine.runAndWait()         
         break
 
 # release VideoCapture()

@@ -177,7 +177,7 @@ plt.plot(val_accuracy, color='blue', label='validataion accuracy')
 plt.xlabel('Epochs')
 plt.ylabel('Accuracy')
 plt.legend()
-plt.savefig('outputs/accuracy.png')     #change
+plt.savefig('outputs/accuracy.png')     
 plt.show()
  
 # loss plots
@@ -187,7 +187,7 @@ plt.plot(val_loss, color='red', label='validataion loss')
 plt.xlabel('Epochs')
 plt.ylabel('Loss')
 plt.legend()
-plt.savefig('outputs/loss.png')         #change
+plt.savefig('outputs/loss.png')         
 plt.show()
 
 # save the model to disk

@@ -34,7 +34,7 @@ aug = albumentations.Compose([
 
 # model = models.MobineNetV2(pretrained=False, requires_grad=False)
 #device=('cuda:0' if torch.cuda.is_available() else 'cpu')
-model = cnn_models.CustomCNN()      #change .to(device)
+model = cnn_models.CustomCNN()      
 model.load_state_dict(torch.load('outputs/model.pth'))
 print(model)
 print('Model loaded')
@@ -57,6 +57,6 @@ end = time.time()
 print(f"{(end-start):.3f} seconds")
  
 cv2.putText(image_copy, lb.classes_[preds], (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 0, 255), 2)
-cv2.imshow('image',image_copy)     #change plt to cv2
+cv2.imshow('image',image_copy)     
 cv2.imwrite(f"outputs/{args['img']}", image_copy)
-cv2.waitKey(0)          #change comment
+cv2.waitKey(0)          
