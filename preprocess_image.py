@@ -10,7 +10,7 @@ import os
 import cv2
 import random
 import albumentations
-import numpy as np
+import numpy as np 
 import argparse
 
 from imutils import paths

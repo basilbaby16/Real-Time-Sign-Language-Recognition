@@ -96,7 +96,7 @@ while(cap.isOpened()):
     if cv2.waitKey(27) & 0xFF == ord('q'):             
         engine = pyttsx3.init()     
         engine.say(finalText)       
-        engine.runAndWait()         
+        engine.runAndWait()          
         break
 
 # release VideoCapture()

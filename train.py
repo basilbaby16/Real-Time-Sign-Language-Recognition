@@ -187,7 +187,7 @@ plt.plot(val_loss, color='red', label='validataion loss')
 plt.xlabel('Epochs')
 plt.ylabel('Loss')
 plt.legend()
-plt.savefig('outputs/loss.png')         
+plt.savefig('outputs/loss.png')          
 plt.show()
 
 # save the model to disk

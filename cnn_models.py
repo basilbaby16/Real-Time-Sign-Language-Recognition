@@ -5,7 +5,7 @@ import joblib
 from torchvision import models
 
 # load the binarized labels
-print('Loading label binarizer...')
+print('Loading label binarizer...') 
 lb = joblib.load('outputs/lb.pkl')
 
 class CustomCNN(nn.Module):

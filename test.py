@@ -49,7 +49,7 @@ image = image.unsqueeze(0)
 print(image.shape)
  
 start = time.time()
-outputs = model(image)
+outputs = model(image) 
 _, preds = torch.max(outputs.data, 1)
 print('PREDS', preds)
 print(f"Predicted output: {lb.classes_[preds]}")

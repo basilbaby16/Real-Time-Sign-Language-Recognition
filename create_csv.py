@@ -46,4 +46,4 @@ data.to_csv('input/data.csv', index=False)
 print('Saving the binarized labels as pickled file')
 joblib.dump(lb, 'outputs/lb.pkl')     
 
-print(data.head(5))             
+print(data.head(5))              
